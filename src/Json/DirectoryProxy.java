@@ -7,41 +7,34 @@ import com.google.gson.Gson;
 public class DirectoryProxy implements Directory{
 
 	MainDirectory main;
-	
+	//TODO: Have DirectoryProxy export the updated string list in JSON and 
 	Gson g;
 	ArrayList emps;
 	
 	public DirectoryProxy(){
 		g = new Gson();
 		emps = new ArrayList<Employee>();
-		//TODO: initialize MainDirectory
+		main = new MainDirectory();
 	}
 	
 	
 	@Override
 	public void add(Collection<Employee> c) {
-		// TODO Auto-generated method stub
-		
+		emps.addAll(c);	
 	}
 
 	@Override
 	public void print() {
-		// TODO Auto-generated method stub
-		
+		main.print();
 	}
 
 	@Override
 	public void clear() {
-		// TODO Auto-generated method stub
-		
+		main.clear();
 	}
 	
-	public void g_import(String fileName){
-		
-	}
-	
-	public void g_export(String fileName){
-		
-	}
+//	public void g_export(String fileName){
+//		
+//	}
 
 }
